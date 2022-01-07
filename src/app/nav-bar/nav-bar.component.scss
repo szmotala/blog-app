@@ -1,0 +1,61 @@
+$logo-size: 40px;
+$nav-color: #3d3d3d;
+
+.navigation-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: max(5vh, 50px);
+  background: #fffffe;
+  margin-bottom: 3vh;
+  padding: 0 5vw;
+
+  .logo__container {
+    color: $nav-color;
+    cursor: default;
+
+    .logo__text {
+      font-size: $logo-size;
+      font-style: italic;
+      letter-spacing: 0.12em;
+
+      &::selection {
+        background: none;
+      }
+    }
+  }
+
+  .links__container {
+    width: 25em;
+
+    ul {
+      width: 100%;
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+
+      li {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          text-decoration: none;
+          text-align: center;
+          font-size: min(1.5vw, 20px);
+          color: $nav-color;
+          font-weight: 600;
+          transition: all 0.4s;
+          cursor: pointer;
+
+          &:hover,
+          &.active {
+            font-size: min(1.52vw, 22px);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
