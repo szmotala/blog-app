@@ -1,4 +1,5 @@
 $font-color: #3d3d3d;
+$paragraph-color: #6d6d6d;
 
 * {
   color: $font-color;
@@ -33,11 +34,11 @@ $font-color: #3d3d3d;
         margin-bottom: 1rem;
         font-size: min(3vw, 50px);
       }
-      h2 {
+      p {
         width: min(35rem, 100%);
         // text-transform: uppercase;
-        color: #6d6d6d;
-        font-size: min(1.25vw, 25px);
+        color: $paragraph-color;
+        font-size: min(1.5vw, 24px);
         font-weight: 500;
         letter-spacing: 0.15rem;
       }
@@ -69,8 +70,8 @@ $font-color: #3d3d3d;
         justify-content: center;
 
         img {
-          width: min(600px, 30vw);
-          height: min(600px, 30vw);
+          width: min(400px, 30vw);
+          height: min(400px, 30vw);
           border-radius: 50%;
           object-fit: cover;
           object-position: left;
@@ -103,9 +104,5 @@ $font-color: #3d3d3d;
         }
       }
     }
-  }
-
-  .contact__container {
-    background: red;
   }
 }

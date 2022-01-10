@@ -1,6 +1,6 @@
 <div class="navigation-content">
   <div class="logo__container">
-    <h1 class="logo__text">Karo.</h1>
+    <h1 routerLink="/" class="logo__text">Karo.</h1>
   </div>
   <div class="links__container">
     <ul>
@@ -16,7 +16,7 @@
         <a
           routerLink="blog"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{ exact: false }"
           >Blog</a
         >
       </li>
