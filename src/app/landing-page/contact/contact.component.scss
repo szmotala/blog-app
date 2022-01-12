@@ -2,18 +2,17 @@ $font-color: #3d3d3d;
 $background-contact: #566454;
 .contact__container {
   width: 100%;
-  height: min(calc(90vh - 50px), 85vh);
+  height: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  margin: 3vh 0 0;
   background: rgba($color: $background-contact, $alpha: 0.2);
 
   h3 {
-    font-size: min(3vw, 24px);
+    font-size: min(2vw, 24px);
     margin-bottom: 2vh;
     font-weight: 400;
   }
@@ -26,7 +25,7 @@ $background-contact: #566454;
     a {
       text-decoration: none;
       color: $font-color;
-      font-size: min(4vw, 50px);
+      font-size: min(3vw, 36px);
       letter-spacing: 0.09em;
       font-weight: 600;
       position: relative;
@@ -66,7 +65,7 @@ $background-contact: #566454;
       justify-content: space-around;
       align-items: center;
       list-style: none;
-      width: min(40vw, 400px);
+      width: min(30vw, 300px);
 
       margin: 1.5vh 0 0;
 
@@ -81,12 +80,12 @@ $background-contact: #566454;
           width: 100%;
           height: 100%;
           img {
-            width: min(6vw, 40px);
-            height: min(6vw, 40px);
+            width: min(4vw, 30px);
+            height: min(4vw, 30px);
 
             &:hover {
-              width: min(6.3vw, 45px);
-              height: min(6.3vw, 45px);
+              width: min(4.3vw, 35px);
+              height: min(4.3vw, 35px);
             }
           }
         }

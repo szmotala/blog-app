@@ -5,4 +5,5 @@ export class Post {
   content: string;
   image_path: string;
   published: any;
+  category: any;
 }

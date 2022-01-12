@@ -1,1 +1,51 @@
-<p>footer works!</p>
+<div class="footer">
+  <div class="footer__content">
+    <div class="logo__container">
+      <h1 class="logo__text">Karo.</h1>
+    </div>
+    <div class="footer__links">
+      <ul class="links">
+        <h3 class="link__title">Home</h3>
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [queryParams]="{ section: 'about-me' | json }"
+          >
+            O mnie</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [queryParams]="{ section: 'blog-prev' | json }"
+            >Najnowsze wpisy</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [queryParams]="{ section: 'contact' | json }"
+          >
+            Kontakt</a
+          >
+        </li>
+      </ul>
+
+      <ul class="links">
+        <h3 class="link__title">Najnowsze wpisy na blogi</h3>
+        <li *ngFor="let post of latest">
+          <a routerLink="blog/post/{{ post.id }}"> {{ post.title }}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="rights">
+    <p>© Wszystkie prawa zastrzeżone 2022</p>
+  </div>
+</div>

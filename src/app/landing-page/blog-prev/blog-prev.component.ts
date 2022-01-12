@@ -3,12 +3,13 @@ import { BlogService } from 'src/app/blog/blog.service';
 import { Post } from 'src/app/blog/blog/post';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  selector: 'app-blog-prev',
+  templateUrl: './blog-prev.component.html',
+  styleUrls: ['./blog-prev.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class BlogPrevComponent implements OnInit {
   latest: Post[];
+
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {

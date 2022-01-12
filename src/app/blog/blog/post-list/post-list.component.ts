@@ -10,6 +10,7 @@ import { BlogService } from 'src/app/blog/blog.service';
 })
 export class PostListComponent implements OnInit {
   posts: Observable<Post[]>;
+  category: string;
 
   constructor(private blogService: BlogService) {}
 

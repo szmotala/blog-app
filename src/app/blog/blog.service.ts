@@ -16,7 +16,9 @@ export class BlogService {
   postDoc: AngularFirestoreDocument<Post>;
 
   constructor(private afs: AngularFirestore) {
-    this.postCollection = this.afs.collection('posts');
+    this.postCollection = this.afs.collection('posts', (ref) =>
+      ref.orderBy('published', 'desc')
+    );
   }
 
   getPosts() {

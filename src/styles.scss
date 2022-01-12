@@ -3,6 +3,8 @@
 $hd: 1080px;
 $tablet: 768px;
 
+$font-color: #3d3d3d;
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +13,7 @@ $tablet: 768px;
 }
 
 body {
-  padding: 3vh 0;
+  padding: 3vh 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +21,14 @@ body {
 
   width: 100vw;
   background: #fffffe;
+
+  .component__title {
+    font-size: min(3vw, 36px);
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    color: $font-color;
+  }
 }
 
 app-root {

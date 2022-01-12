@@ -9,15 +9,14 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
-import { CoreModule } from './core/core.module';
+import { ContactComponent } from './landing-page/contact/contact.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogModule } from './blog/blog.module';
+import { LandingPageModule } from './landing-page/landing-page.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ContactComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -26,10 +25,10 @@ import { BlogModule } from './blog/blog.module';
     AngularFirestoreModule,
     AngularFireStorageModule,
 
-    CoreModule,
     SharedModule,
     AppRoutingModule,
     BlogModule,
+    LandingPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,7 @@
 <div class="blog-prev__content">
-  <ul class="blog-list__list">
-    <li class="list_post_item" *ngFor="let post of posts | async">
+  <h2 class="component__title">ostatnie wpisy na blogu</h2>
+  <ul class="latest_posts">
+    <li class="list_post_item" *ngFor="let post of latest">
       <div class="post__container">
         <div class="image__content">
           <img [src]="post.image_path" alt="" />
@@ -14,7 +15,7 @@
         </div>
       </div>
       <div class="button__content">
-        <button routerLink="post/{{ post.id }}">Czytaj dalej</button>
+        <button routerLink="blog/post/{{ post.id }}">Czytaj dalej</button>
       </div>
     </li>
   </ul>
