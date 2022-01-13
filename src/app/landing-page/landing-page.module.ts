@@ -18,6 +18,6 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [CommonModule, RouterModule],
   providers: [BlogService],
-  exports: [ContactComponent],
+  exports: [],
 })
 export class LandingPageModule {}

@@ -15,14 +15,16 @@ main {
 
   .about-me {
     width: 100%;
-    height: max(47vh, 100%);
+    height: max(60vh, 100%);
     margin: 3vh 0;
   }
 
   .blog-prev {
     width: 100%;
-    height: max(47vh, 100%);
+    height: max(60vh, 100%);
     margin: 3vh 0;
+    display: grid;
+    align-items: center;
   }
 
   .contact {

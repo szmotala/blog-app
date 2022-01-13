@@ -6,26 +6,28 @@
     <ul>
       <li>
         <a
-          routerLink="/"
+          routerLink="home"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{ exact: false }"
           >Home</a
         >
       </li>
       <li>
-        <a
-          routerLink="blog"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: false }"
-          >Blog</a
+        <a routerLink="home" [queryParams]="{ section: 'about-me' | json }">
+          O mnie</a
+        >
+      </li>
+      <li>
+        <a routerLink="home" [queryParams]="{ section: 'contact' | json }">
+          Kontakt</a
         >
       </li>
       <li>
         <a
-          routerLink="contact"
+          routerLink="../blog"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          >Kontakt</a
+          [routerLinkActiveOptions]="{ exact: false }"
+          >Blog</a
         >
       </li>
     </ul>

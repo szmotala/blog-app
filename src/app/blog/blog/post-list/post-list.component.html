@@ -1,6 +1,22 @@
-<div class="blog-prev__content">
+<div class="blog__content">
+  <ul class="blog__categories">
+    <div class="blog__categories-h3">
+      <h3>kategorie</h3>
+    </div>
+    <li
+      class="blog__categories-item"
+      *ngFor="let category of categories; let i = index"
+      (click)="filterItemsByCategory(category)"
+    >
+      <p class="post__category">#{{ category }}</p>
+    </li>
+    <li class="blog__categories-item" (click)="filterItemsByCategory('reset')">
+      <p class="post__category">reset</p>
+    </li>
+  </ul>
+
   <ul class="blog-list__list">
-    <li class="list_post_item" *ngFor="let post of posts | async">
+    <li class="list_post_item" *ngFor="let post of filteredPosts | async">
       <div class="post__container">
         <div class="image__content">
           <img [src]="post.image_path" alt="" />
@@ -9,7 +25,15 @@
           <p class="text__published">
             <small>{{ post.published.toDate() | date: "yyyy-MM-dd" }}</small>
           </p>
-          <h2>{{ post.title }}</h2>
+          <h2 routerLink="post/{{ post.id }}">{{ post.title }}</h2>
+          <div class="post__categories-div">
+            <h6
+              *ngFor="let category of post.category"
+              (click)="filterItemsByCategory(category)"
+            >
+              #{{ category }}
+            </h6>
+          </div>
           <p class="post__content">{{ post.content }}</p>
         </div>
       </div>
