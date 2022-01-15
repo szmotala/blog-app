@@ -9,6 +9,24 @@
     </div>
   </section>
 
+  <section class="blog__categories">
+    <ul class="blog__categories">
+      <div class="blog__categories-h3">
+        <h3>kategorie</h3>
+      </div>
+      <li
+        class="blog__categories-item"
+        *ngFor="let category of categories; let i = index"
+        (click)="blogList.toggle(category)"
+      >
+        <p class="post__category">#{{ category }}</p>
+      </li>
+      <li class="blog__categories-item" (click)="blogList.toggle('reset')">
+        <p class="post__category">reset</p>
+      </li>
+    </ul>
+  </section>
+
   <section class="blog__content">
     <app-post-list></app-post-list>
   </section>

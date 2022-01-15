@@ -27,7 +27,6 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 
     SharedModule,
     AppRoutingModule,
-    BlogModule,
     LandingPageModule,
   ],
   providers: [],

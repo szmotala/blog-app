@@ -7,6 +7,8 @@ import { BlogPrevComponent } from './blog-prev/blog-prev.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { LandingPageRoutingModule } from './landing-page-routing/landing-page-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { RouterModule } from '@angular/router';
     AboutMeComponent,
     ContactComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, SharedModule, LandingPageRoutingModule],
   providers: [BlogService],
   exports: [],
 })

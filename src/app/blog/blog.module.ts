@@ -6,17 +6,12 @@ import { RouterModule } from '@angular/router';
 
 import { PostListComponent } from './blog/post-list/post-list.component';
 import { PostDatailComponent } from './blog/post-datail/post-datail.component';
-import { PersonalInfoComponent } from './blog/personal-info/personal-info.component';
 import { BlogComponent } from './blog/blog.component';
+import { BlogRoutingModule } from './blog/blog-routing/blog-routing.module';
 
 @NgModule({
-  declarations: [
-    PostDatailComponent,
-    PostListComponent,
-    PersonalInfoComponent,
-    BlogComponent,
-  ],
-  imports: [CommonModule, SharedModule, RouterModule],
+  declarations: [PostDatailComponent, PostListComponent, BlogComponent],
+  imports: [CommonModule, SharedModule, BlogRoutingModule],
   providers: [BlogService],
 })
 export class BlogModule {}

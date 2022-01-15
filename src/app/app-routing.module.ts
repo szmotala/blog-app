@@ -1,14 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogComponent } from './blog/blog/blog.component';
-import { PostDatailComponent } from './blog/blog/post-datail/post-datail.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: 'home', component: LandingPageComponent },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./landing-page/landing-page.module').then(
+        (m) => m.LandingPageModule
+      ),
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'blog', component: BlogComponent },
-  { path: 'blog/post/:id', component: PostDatailComponent },
+  {
+    path: 'blog',
+    loadChildren: () => import('./blog/blog.module').then((m) => m.BlogModule),
+    data: { depth: 2 },
+  },
 ];
 
 @NgModule({

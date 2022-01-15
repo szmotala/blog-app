@@ -3,24 +3,7 @@
 
   <ul class="latest_posts">
     <li class="list_post_item" *ngFor="let post of latest">
-      <div class="post__container">
-        <div class="image__content">
-          <img [src]="post.image_path" alt="" />
-        </div>
-        <div class="text__content">
-          <p class="text__published">
-            <small>{{ post.published.toDate() | date: "yyyy-MM-dd" }}</small>
-          </p>
-          <h2 routerLink="../blog/post/{{ post.id }}">{{ post.title }}</h2>
-          <div class="post__categories">
-            <h6 *ngFor="let category of post.category">#{{ category }}</h6>
-          </div>
-          <p class="post__content">{{ post.content }}</p>
-        </div>
-      </div>
-      <div class="button__content">
-        <button routerLink="../blog/post/{{ post.id }}">Czytaj dalej</button>
-      </div>
+      <app-post-card [post]="post"></app-post-card>
     </li>
   </ul>
   <div class="blog__link-div">

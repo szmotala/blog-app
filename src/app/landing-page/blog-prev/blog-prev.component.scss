@@ -22,106 +22,7 @@ $background-contact: #566454;
     list-style: none;
 
     .list_post_item {
-      width: 100%;
       height: 100%;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-
-      pointer-events: none;
-
-      padding: 1em;
-      transition: all 0.5s;
-
-      &:hover {
-        background: rgba($color: $paragraph-color, $alpha: 0.08);
-
-        .text__content {
-          h2 {
-            text-decoration: underline;
-          }
-        }
-        .button__content {
-          button {
-            background: rgba($color: $background-contact, $alpha: 0.8);
-            color: #fffffe;
-          }
-        }
-      }
-
-      .image__content {
-        padding: 0;
-        img {
-          width: 100%;
-          object-fit: cover;
-          object-position: center;
-        }
-      }
-
-      .text__content {
-        p {
-          color: $paragraph-color;
-        }
-
-        .text__published {
-          font-weight: 600;
-        }
-
-        h2 {
-          color: $font-color;
-          margin-bottom: 0.2rem;
-          font-size: min(20px, 2vw);
-          text-align: justify;
-
-          transition: all 0.3s linear;
-          cursor: pointer;
-          pointer-events: auto;
-        }
-
-        .post__categories {
-          width: 100%;
-          display: flex;
-          margin-bottom: 1rem;
-
-          h6 {
-            color: $background-contact;
-            margin-right: 0.3rem;
-          }
-        }
-
-        .post__content {
-          display: -webkit-box;
-          width: 100%;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          text-align: justify;
-          font-size: min(16px, 1.5vw);
-        }
-      }
-
-      .button__content {
-        display: flex;
-        justify-content: right;
-        button {
-          width: 9rem;
-
-          color: $font-color;
-          background: rgba($color: $background-contact, $alpha: 0.2);
-          font-size: min(16px, 1.5vw);
-          font-weight: 700;
-
-          margin-top: 0.9rem;
-          padding: 0.4rem;
-          border: none;
-
-          cursor: pointer;
-          pointer-events: auto;
-
-          transition: all 0.3s;
-        }
-      }
     }
   }
 
@@ -130,6 +31,7 @@ $background-contact: #566454;
     height: 3em;
     display: grid;
     align-items: center;
+    justify-content: right;
     margin: 1em 0 0;
 
     .blog__link {
@@ -137,6 +39,7 @@ $background-contact: #566454;
       color: $font-color;
       font-size: 18px;
       font-weight: 600;
+      width: max-content;
 
       text-align: right;
 
@@ -144,8 +47,8 @@ $background-contact: #566454;
       cursor: pointer;
 
       &:hover {
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 19px;
+        // font-weight: 700;
       }
     }
   }
