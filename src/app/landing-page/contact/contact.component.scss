@@ -1,5 +1,6 @@
 $font-color: #3d3d3d;
-$background-contact: #566454;
+$background-contact: #e3e7e3;
+
 .contact__container {
   width: 100%;
   height: 100%;
@@ -9,7 +10,7 @@ $background-contact: #566454;
   justify-content: center;
   align-items: center;
 
-  background: rgba($color: $background-contact, $alpha: 0.2);
+  background: $background-contact;
 
   h3 {
     font-size: min(2vw, 24px);
@@ -79,13 +80,17 @@ $background-contact: #566454;
         a {
           width: 100%;
           height: 100%;
-          img {
-            width: min(4vw, 30px);
-            height: min(4vw, 30px);
+          svg {
+            width: min(4vw, 40px);
+            height: min(4vw, 40px);
+
+            path {
+              fill: $font-color;
+            }
 
             &:hover {
-              width: min(4.3vw, 35px);
-              height: min(4.3vw, 35px);
+              width: 45px;
+              height: 45px;
             }
           }
         }

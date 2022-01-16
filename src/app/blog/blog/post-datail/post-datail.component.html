@@ -1,20 +1,40 @@
-<div *ngIf="post">
-  <section class="post-datail__hero">
-    <img [src]="post.image_path" alt="" />
+<div *ngIf="post; else notfound">
+  <main>
+    <section class="post-datail__hero">
+      <img [src]="post.image_path" alt="" />
 
-    <div class="hero-text">
-      <h1>{{ post.title }}</h1>
-      <h3>{{ post.subtitle }}</h3>
-      <p>
-        <small
-          >Opublikowano:
-          {{ post.published.toDate() | date: "yyyy-MM-dd" }}</small
-        >
-      </p>
-    </div>
-  </section>
+      <div class="hero-text">
+        <h1>{{ post.title }}</h1>
+        <h3>{{ post.subtitle }}</h3>
+        <div class="details">
+          <p class="published">
+            <small
+              >Opublikowano:
+              {{ post.published.toDate() | date: "yyyy-MM-dd" }}</small
+            >
+          </p>
+          <p class="space">|</p>
+          <p
+            *ngFor="let category of post.category"
+            class="category"
+            routerLink="../../../blog"
+            [queryParams]="{ category: category | json }"
+          >
+            <small>#{{ category }}</small>
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section class="post-detail__content">
-    <p [innerHTML]="post.content"></p>
-  </section>
+    <section class="post-detail__content">
+      <p [innerHTML]="post.content"></p>
+    </section>
+  </main>
 </div>
+
+<ng-template #notfound>
+  <div class="no-data-container">
+    <h3>Przykro mi</h3>
+    <p>Nie znaleziono postu spełniającego podane kryteria</p>
+  </div>
+</ng-template>

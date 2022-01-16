@@ -40,13 +40,16 @@ export class PostListComponent implements OnInit {
   currentCategory: string;
 
   show = true;
-  list_display_col: number = 1;
+  list_display_col: number = 3;
+
+  @Input() category: string;
 
   constructor(private blogService: BlogService) {}
 
   ngOnInit(): void {
     this.posts = this.blogService.getPosts();
     this.filteredPosts = this.blogService.getPosts();
+    this.toggle(this.category);
   }
 
   get stateName() {

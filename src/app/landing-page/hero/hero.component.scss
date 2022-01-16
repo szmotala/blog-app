@@ -1,6 +1,8 @@
 $font-color: #3d3d3d;
 $paragraph-color: #6d6d6d;
 
+$background-main: #fffffe;
+
 .hero__container {
   background: url(../../../assets/LandingPageImages/hero_bg.jpg);
   width: 100%;
@@ -9,7 +11,7 @@ $paragraph-color: #6d6d6d;
   background-size: cover;
 
   .text__container {
-    background: rgba(255, 255, 254, 0.6);
+    background: rgba($color: $background-main, $alpha: 0.6);
     backdrop-filter: blur(2px);
     height: 100%;
     width: 50%;

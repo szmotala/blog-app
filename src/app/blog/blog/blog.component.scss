@@ -4,6 +4,8 @@ $paragraph-color: #6d6d6d;
 
 main {
   display: grid;
+  color: $font-color;
+
   .blog__hero {
     position: relative;
 
@@ -51,6 +53,81 @@ main {
         font-size: min(1.5vw, 24px);
         font-weight: 500;
         letter-spacing: 0.15rem;
+      }
+    }
+  }
+
+  .blog__manipulation {
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .layout__content {
+      display: grid;
+      align-items: center;
+      justify-content: right;
+      padding: 0 1em;
+
+      .layout__filter-list {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+
+        width: 110px;
+
+        li {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+
+          width: 30px;
+          height: 50px;
+          cursor: pointer;
+
+          &:hover {
+            svg {
+              transform: scale(1.1);
+            }
+          }
+
+          svg {
+            width: 25px;
+            height: 25px;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+
+    .categories__content {
+      ul {
+        display: flex;
+        list-style: none;
+
+        li {
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          margin-left: 1.5rem;
+
+          &:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            color: $font-color;
+
+            &.active {
+              text-decoration: underline;
+              font-weight: 600;
+            }
+          }
+        }
       }
     }
   }

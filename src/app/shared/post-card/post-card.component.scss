@@ -1,7 +1,8 @@
 $font-color: #3d3d3d;
 $paragraph-color: #6d6d6d;
 
-$background-contact: #566454;
+$main_bg: #e3e7e3;
+$dark-green: #475345;
 
 .post__container {
   width: 100%;
@@ -16,8 +17,12 @@ $background-contact: #566454;
   padding: 1em;
   transition: all 0.2s;
 
+  border: 1px solid $main_bg;
+
+  background: #fffffe;
+
   &:hover {
-    background: rgba($color: $paragraph-color, $alpha: 0.1);
+    background: rgba($color: $main_bg, $alpha: 0.2);
 
     .text__content {
       h2 {
@@ -26,7 +31,7 @@ $background-contact: #566454;
     }
     .button__content {
       button {
-        background: rgba($color: $background-contact, $alpha: 0.8);
+        background: $dark-green;
         color: #fffffe;
       }
     }
@@ -79,7 +84,7 @@ $background-contact: #566454;
       margin-bottom: 1rem;
 
       h6 {
-        color: $background-contact;
+        color: $dark-green;
         margin-right: 0.3rem;
         transition: all 0.2s;
         cursor: pointer;
@@ -90,12 +95,13 @@ $background-contact: #566454;
   .button__content {
     display: flex;
     justify-content: right;
+    margin-top: 24px;
 
     button {
       width: 9rem;
 
-      color: $font-color;
-      background: rgba($color: $background-contact, $alpha: 0.2);
+      color: #fffffe;
+      background: #5f6e5d;
       font-size: min(16px, 1.5vw);
       font-weight: 700;
 

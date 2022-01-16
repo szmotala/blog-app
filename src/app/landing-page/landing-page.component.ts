@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
   section: string;
-  rendered: boolean;
 
   constructor(private router: ActivatedRoute) {}
 
@@ -16,7 +15,7 @@ export class LandingPageComponent implements OnInit {
     this.router.queryParams.subscribe((params) => {
       if (this.router.snapshot.queryParams['section']) {
         this.section = JSON.parse(params['section']);
-        this.scrollToSection(this.section);
+        // this.scrollToSection(this.section);
       } else {
         this.section = undefined;
       }

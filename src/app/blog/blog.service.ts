@@ -13,6 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class BlogService {
   postCollection: AngularFirestoreCollection<Post>;
+  categories: AngularFirestoreCollection<string>;
   postDoc: AngularFirestoreDocument<Post>;
 
   constructor(private afs: AngularFirestore) {
@@ -34,6 +35,10 @@ export class BlogService {
         });
       })
     );
+  }
+
+  getCategoriesList() {
+    return this.afs.doc<Array<string>>('categories/categories').valueChanges();
   }
 
   getPostData(id: string) {

@@ -1,48 +1,81 @@
 $font-color: #3d3d3d;
 $span-color: #8d8d8d;
 $paragraph-color: #6d6d6d;
-$background-color: #fffffe;
+$background-main: #fffffe;
 
-.post-datail__hero {
-  height: 50vh;
+$very-light-green: #e3e7e3;
+$light-green: #c8d0c7;
+$medium-green: #adb9ab;
+$green: #92a190;
+$medium-dark-grren: #5f6e5d;
+$dark-green: #475345;
+
+main {
   width: 100%;
-  position: relative;
-
-  img {
+  color: $font-color;
+  .post-datail__hero {
     width: 100%;
-    height: 50vh;
+    height: min(30rem, 50vh);
 
-    object-fit: cover;
-    object-position: center;
+    display: grid;
+
+    img {
+      height: min(20rem, 25vh);
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-text {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      h1 {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      h3 {
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .details {
+        display: flex;
+
+        .space {
+          margin: 0 0.5rem 0 1rem;
+        }
+
+        .published {
+          color: $green;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+        .category {
+          color: $medium-dark-grren;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
   }
+}
 
-  .hero-text {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-
-    display: flex;
-    flex-direction: column;
-
-    width: 90%;
-
-    padding: 2% 5%;
-    background: rgba($color: $background-color, $alpha: 0.4);
-
-    h1 {
-      font-size: min(3vw, 50px);
-      color: $font-color;
-      margin-bottom: 1rem;
-    }
-    h3 {
-      font-size: min(1.5vw, 24px);
-      color: $font-color;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    p {
-      color: $span-color;
-    }
+.no-data-container {
+  color: $font-color;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0;
+  h3 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+  p {
+    color: $paragraph-color;
   }
 }
