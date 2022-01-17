@@ -10,7 +10,8 @@ $main_bg: #e3e7e3;
 
   .component__title {
     text-align: left;
-    width: auto;
+    width: 50%;
+    border-bottom: 2px solid $font-color;
   }
 
   .latest_posts {
@@ -38,7 +39,7 @@ $main_bg: #e3e7e3;
     .blog__link {
       text-decoration: none;
       color: $font-color;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 600;
       width: max-content;
 
@@ -48,8 +49,7 @@ $main_bg: #e3e7e3;
       cursor: pointer;
 
       &:hover {
-        font-size: 19px;
-        // font-weight: 700;
+        font-size: 25px;
       }
     }
   }

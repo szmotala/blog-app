@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BlogComponent } from '../blog.component';
-import { PostDatailComponent } from '../post-datail/post-datail.component';
+import { FullPostComponent } from '../full-post/full-post.component';
+import { PostListComponent } from '../post-list/post-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BlogComponent,
+    component: PostListComponent,
   },
-  { path: 'post/:id', component: PostDatailComponent, data: { depth: 3 } },
+  {
+    path: 'post/:id',
+    component: FullPostComponent,
+    data: { depth: 3 },
+  },
 ];
 
 @NgModule({

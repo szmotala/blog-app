@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Post } from './blog/post';
+import { Post } from './post';
 
 import {
   AngularFirestore,

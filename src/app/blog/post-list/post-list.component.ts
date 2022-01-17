@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post } from '../post';
 import { BlogService } from 'src/app/blog/blog.service';
@@ -10,6 +10,7 @@ import {
   trigger,
   state,
 } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -35,39 +36,59 @@ import {
   ],
 })
 export class PostListComponent implements OnInit {
+  //objekty zawierające listy postów
   posts: Observable<Post[]>;
   filteredPosts: Observable<Post[]>;
-  currentCategory: string;
 
+  //zmienne przechowujące kategorie
+  categories: string[] = [];
+  category: string;
+
+  //stan listy
   show = true;
+
+  //ilość kolumn w gridzie
   list_display_col: number = 3;
 
-  @Input() category: string;
-
-  constructor(private blogService: BlogService) {}
+  constructor(
+    private blogService: BlogService,
+    private router: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.posts = this.blogService.getPosts();
     this.filteredPosts = this.blogService.getPosts();
-    this.toggle(this.category);
+
+    this.blogService
+      .getCategoriesList()
+      .subscribe((data) => (this.categories = data['categories']));
+
+    this.router.queryParams.subscribe((params) => {
+      let param = params['category'];
+      if (param) {
+        this.category = param.slice(1, -1);
+      } else {
+        this.category = 'reset';
+      }
+      this.toggle();
+    });
+
+    this.scrollToTop();
   }
 
-  get stateName() {
+  get refreshList() {
     return this.show ? 'show' : 'hide';
   }
 
-  toggle(category: string) {
-    if (this.currentCategory != category) {
-      this.show = !this.show;
+  toggle() {
+    this.show = !this.show;
 
-      setTimeout(() => {
-        this.filterItemsByCategory(category);
-      }, 300);
-      setTimeout(() => {
-        this.show = !this.show;
-      }, 300);
-      this.currentCategory = category;
-    }
+    setTimeout(() => {
+      this.filterItemsByCategory();
+    }, 300);
+    setTimeout(() => {
+      this.show = !this.show;
+    }, 300);
   }
 
   changeLayout(columns: number) {
@@ -80,15 +101,23 @@ export class PostListComponent implements OnInit {
     }
   }
 
-  filterItemsByCategory(category: string) {
-    if (category != 'reset') {
+  filterItemsByCategory() {
+    if (this.category != 'reset') {
       this.filteredPosts = this.posts.pipe(
         map((post) => {
-          return post.filter((p) => p.category.includes(category));
+          return post.filter((p) => p.category.includes(this.category));
         })
       );
     } else {
       this.filteredPosts = this.posts;
     }
+  }
+
+  scrollToTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }

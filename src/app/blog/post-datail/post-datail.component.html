@@ -1,5 +1,5 @@
-<div *ngIf="post; else notfound">
-  <main>
+<div class="main-post-datail">
+  <div *ngIf="post; else notfound">
     <section class="post-datail__hero">
       <img [src]="post.image_path" alt="" />
 
@@ -27,14 +27,14 @@
     </section>
 
     <section class="post-detail__content">
-      <p [innerHTML]="post.content"></p>
+      <p [innerHTML]="post.content" class="post__content"></p>
     </section>
-  </main>
-</div>
-
-<ng-template #notfound>
-  <div class="no-data-container">
-    <h3>Przykro mi</h3>
-    <p>Nie znaleziono postu spełniającego podane kryteria</p>
   </div>
-</ng-template>
+
+  <ng-template #notfound>
+    <div class="no-data-container">
+      <h3>Przykro mi</h3>
+      <p>Nie znaleziono postu spełniającego podane kryteria</p>
+    </div>
+  </ng-template>
+</div>

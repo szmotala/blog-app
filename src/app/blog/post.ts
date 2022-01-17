@@ -4,6 +4,7 @@ export class Post {
   subtitle: string;
   content: string;
   image_path: string;
+  image_mini_path: string;
   published: any;
   category: any;
 }
