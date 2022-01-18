@@ -21,7 +21,8 @@ $dark-green: #475345;
 
   background: #fffffe;
 
-  &:hover {
+  &:hover,
+  &:active {
     background: rgba($color: $main_bg, $alpha: 0.2);
 
     .text__content {
@@ -61,7 +62,7 @@ $dark-green: #475345;
     h2 {
       color: $font-color;
       margin-bottom: 0.2rem;
-      font-size: min(20px, 2vw);
+      font-size: 20px;
       text-align: justify;
 
       transition: all 0.2s;
@@ -76,7 +77,7 @@ $dark-green: #475345;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-align: justify;
-      font-size: min(16px, 1.5vw);
+      font-size: 16px;
     }
 
     .post__categories-div {
@@ -85,6 +86,7 @@ $dark-green: #475345;
       margin-bottom: 1rem;
 
       h6 {
+        font-size: 14px;
         color: $dark-green;
         margin-right: 0.3rem;
         transition: all 0.2s;
@@ -103,7 +105,7 @@ $dark-green: #475345;
 
       color: #fffffe;
       background: #5f6e5d;
-      font-size: min(16px, 1.5vw);
+      font-size: 16px;
       font-weight: 700;
 
       margin-top: 0.9rem;

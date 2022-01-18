@@ -1,21 +1,27 @@
-$logo-size: 40px;
-$nav-color: #3d3d3d;
+$font-color: #3d3d3d;
+$background: #fffffe;
+
+$phone: 600px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
 
 .navigation-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  justify-content: left;
   align-items: center;
-  height: max(5vh, 50px);
-  background: #fffffe;
-  margin-bottom: 3vh;
-  padding: 0 5vw;
+
+  height: 10vh;
+  width: 100%;
+  margin-bottom: 2vh;
+  padding: 0 8vw;
 
   .logo__container {
-    color: $nav-color;
+    color: $font-color;
     cursor: default;
 
     .logo__text {
-      font-size: $logo-size;
+      font-size: 36px;
       font-style: italic;
       letter-spacing: 0.12em;
       cursor: pointer;
@@ -26,34 +32,186 @@ $nav-color: #3d3d3d;
     }
   }
 
+  .menu-btn__container {
+    position: absolute;
+    right: 8vw;
+    z-index: 999;
+    display: grid;
+    align-items: center;
+    justify-content: right;
+    width: 2rem;
+
+    .menu-btn {
+      width: 2rem;
+      height: 0.2rem;
+      border-radius: 10px;
+      background: $font-color;
+      transition: all 0.5s ease;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2rem;
+        height: 0.2rem;
+        border-radius: 10px;
+        background: $font-color;
+        transition: all 0.5s ease;
+      }
+
+      &::before {
+        transform: translateY(-0.7rem);
+      }
+
+      &::after {
+        transform: translateY(0.7rem);
+      }
+    }
+
+    &.open {
+      position: fixed;
+      .menu-btn {
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
   .links__container {
-    width: 30em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 899;
+    width: 70%;
+    height: 100vh;
+    transform: scaleX(0);
+    transform-origin: right;
+    opacity: 0;
+
+    background: $background;
+
+    display: grid;
+    justify-content: left;
+    align-items: center;
+
+    transition: all 0.8s ease;
 
     ul {
-      width: 100%;
-      display: flex;
       list-style: none;
-      justify-content: space-between;
+      width: 100%;
 
       li {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 4rem;
+        padding-left: 10vw;
 
         a {
           text-decoration: none;
-          text-align: center;
-          font-size: min(1.5vw, 20px);
-          color: $nav-color;
+          text-align: left;
+          font-size: 24px;
+          color: $font-color;
           font-weight: 600;
-          transition: all 0.4s;
-          cursor: pointer;
+        }
+      }
+    }
+  }
 
-          &:hover,
-          &.active {
-            font-size: min(1.52vw, 22px);
-            font-weight: 700;
+  .menu-btn__container.open ~ .links__container {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: $tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: max(5vh, 50px);
+    background: #fffffe;
+    margin-bottom: 3vh;
+    padding: 0 5vw;
+
+    .logo__container {
+      .logo__text {
+        font-size: 40px;
+      }
+    }
+
+    .menu-btn__container {
+      display: none;
+    }
+
+    .links__container {
+      position: relative;
+      transform: scaleX(1);
+      opacity: 1;
+      transition: none;
+      height: auto;
+      justify-content: right;
+
+      ul {
+        display: flex;
+        width: auto;
+
+        li {
+          height: 100%;
+          width: auto;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          justify-content: right;
+          margin-left: 3rem;
+
+          a {
+            font-size: 20px;
+
+            &:hover,
+            &.active {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: $laptop) {
+    .logo__container {
+      .logo__text {
+        font-size: 40px;
+      }
+    }
+
+    .links__container {
+      ul {
+        justify-content: space-between;
+        width: 40rem;
+        li {
+          margin-left: 4rem;
+          width: 100%;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+
+          a {
+            font-size: 24px;
+            width: 100%;
+
+            transition: all 0.3s ease;
+
+            &:hover,
+            &.active {
+              font-weight: 700;
+              font-size: 25px;
+            }
           }
         }
       }

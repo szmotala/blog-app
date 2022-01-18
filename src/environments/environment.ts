@@ -5,15 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyC8dwalipsuxVLSbEbOr6xyhI1Vzz7BS-k',
-    authDomain: 'blog-test-projdect.firebaseapp.com',
-    databaseURL:
-      'https://blog-test-projdect-default-rtdb.europe-west1.firebasedatabase.app',
-    projectId: 'blog-test-projdect',
-    storageBucket: 'blog-test-projdect.appspot.com',
-    messagingSenderId: '214858626383',
-    appId: '1:214858626383:web:bdeedea5622ef7e780413a',
-    measurementId: 'G-HN300C1RQP',
+    apiKey: 'AIzaSyCFl7oRVXvsqgIWRuTTi4KMqH_jfRjRa0U',
+    authDomain: 'karo-blog-app.firebaseapp.com',
+    projectId: 'karo-blog-app',
+    storageBucket: 'karo-blog-app.appspot.com',
+    messagingSenderId: '210298639821',
+    appId: '1:210298639821:web:e374d0502b3d3bb379e084',
+    measurementId: 'G-63LFPGDXKM',
   },
 };
 

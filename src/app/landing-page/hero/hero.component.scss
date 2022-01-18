@@ -1,7 +1,12 @@
 $font-color: #3d3d3d;
 $paragraph-color: #6d6d6d;
+$background: #fffffe;
 
-$background-main: #fffffe;
+//sizes
+$phone: 600px;
+$tablet: 768px;
+$laptop: 992px;
+$desktop: 1200px;
 
 .hero__container {
   background: url(../../../assets/LandingPageImages/hero_bg.jpg);
@@ -10,29 +15,78 @@ $background-main: #fffffe;
   background-position: center;
   background-size: cover;
 
+  display: grid;
+  align-items: center;
+
   .text__container {
-    background: rgba($color: $background-main, $alpha: 0.6);
-    backdrop-filter: blur(2px);
-    height: 100%;
-    width: 50%;
+    background: rgba($color: $background, $alpha: 0.7);
+    height: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    padding: 0 5%;
+    text-align: center;
 
     h1 {
-      width: min(35rem, 100%);
       margin-bottom: 1rem;
-      font-size: min(3vw, 50px);
+      font-size: 28px;
     }
     p {
-      width: min(35rem, 100%);
       color: $paragraph-color;
-      font-size: min(1.5vw, 24px);
+      font-size: 20px;
       font-weight: 500;
       letter-spacing: 0.15rem;
+    }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: $tablet) {
+    .text__container {
+      h1 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: $laptop) {
+    .text__container {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: left;
+
+      padding: 0 5%;
+
+      h1 {
+        width: 100%;
+        font-size: 36px;
+      }
+      p {
+        width: 100%;
+        font-size: 20px;
+      }
+    }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: $desktop) {
+    .text__container {
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 24px;
+      }
     }
   }
 }
