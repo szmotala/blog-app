@@ -35,6 +35,8 @@ $desktop: 1200px;
   .menu-btn__container {
     position: absolute;
     right: 8vw;
+    top: 13vh;
+    transform: translateY(calc(-6.5vh - 0.05rem));
     z-index: 999;
     display: grid;
     align-items: center;
