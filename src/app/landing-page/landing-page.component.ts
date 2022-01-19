@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class LandingPageComponent implements OnInit {
   section: string;
 
-  constructor(private router: ActivatedRoute) {}
+  constructor(private router: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit(): void {
     this.router.queryParams.subscribe((params) => {
@@ -21,6 +22,7 @@ export class LandingPageComponent implements OnInit {
         this.scrollToTop();
       }
     });
+    this.titleService.setTitle('Karo | Home');
   }
 
   scrollToSection(section: string) {

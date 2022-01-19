@@ -11,6 +11,7 @@ import {
   state,
 } from '@angular/animations';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-post-list',
@@ -52,7 +53,8 @@ export class PostListComponent implements OnInit {
 
   constructor(
     private blogService: BlogService,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
@@ -74,6 +76,7 @@ export class PostListComponent implements OnInit {
     });
 
     this.scrollToTop();
+    this.titleService.setTitle('Karo | (nie)zwyczajny bog naukowy');
   }
 
   get refreshList() {
