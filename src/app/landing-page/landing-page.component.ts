@@ -15,19 +15,24 @@ export class LandingPageComponent implements OnInit {
     this.router.queryParams.subscribe((params) => {
       if (this.router.snapshot.queryParams['section']) {
         this.section = JSON.parse(params['section']);
-        // this.scrollToSection(this.section);
+        this.scrollToSection(this.section);
       } else {
         this.section = undefined;
+        this.scrollToTop();
       }
     });
-  }
-
-  ngAfterViewChecked() {
-    if (this.section != undefined) this.scrollToSection(this.section);
   }
 
   scrollToSection(section: string) {
     let element = document.querySelector('.' + section);
     element.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
+
+  scrollToTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }

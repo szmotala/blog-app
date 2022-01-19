@@ -17,12 +17,20 @@
         >
       </li>
       <li>
-        <a routerLink="home" [queryParams]="{ section: 'about-me' | json }">
+        <a
+          routerLink="home"
+          [queryParams]="{ section: 'about-me' | json }"
+          (click)="menuOpen()"
+        >
           O mnie</a
         >
       </li>
       <li>
-        <a routerLink="home" [queryParams]="{ section: 'contact' | json }">
+        <a
+          routerLink="home"
+          [queryParams]="{ section: 'contact' | json }"
+          (click)="menuOpen()"
+        >
           Kontakt</a
         >
       </li>
@@ -31,6 +39,7 @@
           routerLink="../blog"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: false }"
+          (click)="menuOpen()"
           >Blog</a
         >
       </li>

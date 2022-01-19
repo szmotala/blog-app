@@ -25,7 +25,6 @@ $desktop: 1200px;
     justify-content: center;
     flex-wrap: wrap;
     height: 100%;
-
     list-style: none;
 
     .list_post_item {
@@ -92,9 +91,5 @@ $desktop: 1200px;
         margin: 0;
       }
     }
-  }
-
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: $desktop) {
   }
 }

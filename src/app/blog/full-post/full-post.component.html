@@ -3,13 +3,17 @@
     <app-post-datail [post]="post"></app-post-datail>
   </div>
   <div class="next-prev-post__container">
-    <div *ngIf="prevPost">
-      <h3 class="next-post">poprzedni post</h3>
-      <app-post-card [post]="prevPost"></app-post-card>
-    </div>
     <div *ngIf="nextPost">
-      <h3 class="prev-post">następny post</h3>
-      <app-post-card [post]="nextPost"></app-post-card>
+      <h3 class="next-post">następny post</h3>
+      <div class="list_post_item">
+        <app-post-card [post]="nextPost"></app-post-card>
+      </div>
+    </div>
+    <div *ngIf="prevPost">
+      <h3 class="prev-post">poprzedni post</h3>
+      <div class="list_post_item">
+        <app-post-card [post]="prevPost"></app-post-card>
+      </div>
     </div>
   </div>
 </div>

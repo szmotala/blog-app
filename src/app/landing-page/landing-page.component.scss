@@ -31,7 +31,7 @@ $tablet: 768px;
 
   .contact {
     width: 100%;
-    height: 47vh;
+    min-height: 50vh;
   }
 
   /* Medium devices (landscape tablets, 768px and up) */
@@ -42,7 +42,7 @@ $tablet: 768px;
 
     .hero {
       margin: 0 0 2vh;
-      height: 50vh;
+      height: 60vh;
     }
   }
 }
